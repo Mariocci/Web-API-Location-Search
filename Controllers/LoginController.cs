@@ -1,36 +1,44 @@
-[Authorize]
-[ApiController]
-[Route("[controller]")]
-public class UsersController : ControllerBase
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using WebApiLocationSearch.Models;
+
+namespace WebApiLocationSearch.Controllers
 {
-    private readonly UserService _userService;
-
-    public UsersController(UserService userService)
+    [Authorize]
+    [ApiController]
+    [Route("[controller]")]
+    public class LoginController : ControllerBase
     {
-        _userService = userService;
-    }
+        private readonly UserService _userService;
 
-    [AllowAnonymous]
-    [HttpPost("login")]
-    public IActionResult Login([FromHeader(Name = "Authorization")] string authHeader)
-    {
-        var apiKey = _userService.Authenticate(authHeader);
+        public LoginController(UserService userService)
+        {
+            _userService = userService;
+        }
 
-        if (apiKey == null)
-            return BadRequest(new { message = "Username or password is incorrect" });
+        [AllowAnonymous]
+        [HttpPost("login")]
+        public IActionResult Login([FromHeader(Name = "Authorization")] string authHeader)
+        {
+            var apiKey = _userService.Authenticate(authHeader);
 
-        return Ok(new { apiKey });
-    }
+            if (apiKey == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
 
-    [AllowAnonymous]
-    [HttpPost("register")]
-    public IActionResult Register([FromBody] LoginModel model)
-    {
-        var apiKey = _userService.Register(model);
+            return Ok(new { apiKey });
+        }
 
-        if (apiKey == null)
-            return BadRequest(new { message = "Registration failed" });
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] LoginModel model)
+        {
+            var apiKey = _userService.Register(model);
 
-        return Ok(new { apiKey }); // Return the API key
+            if (apiKey == null)
+                return BadRequest(new { message = "Registration failed" });
+
+            return Ok(new { apiKey });
+        }
     }
 }

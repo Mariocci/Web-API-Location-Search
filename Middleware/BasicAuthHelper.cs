@@ -1,12 +1,15 @@
-public class BasicAuthHelper
+namespace WebApiLocationSearch.Middleware
 {
-    public static (string username, string password) DecodeBase64Credentials(string authHeader)
+    public class BasicAuthHelper
     {
-        string base64Credentials = authHeader.Substring("Basic ".Length).Trim();
-        
-        string credentials = Encoding.UTF8.GetString(Convert.FromBase64String(base64Credentials));
+        public static (string username, string password) DecodeBase64Credentials(string authHeader)
+        {
+            string base64Credentials = authHeader.Substring("Basic ".Length).Trim();
 
-        string[] parts = credentials.Split(':');
-        return (parts[0], parts[1]);
+            string credentials = Encoding.UTF8.GetString(Convert.FromBase64String(base64Credentials));
+
+            string[] parts = credentials.Split(':');
+            return (parts[0], parts[1]);
+        }
     }
 }

@@ -1,42 +1,46 @@
-public class UserService
+namespace WebApiLocationSearch.Services
 {
-    private readonly UserRepository _userRepository;
-
-    public UserService(UserRepository userRepository)
+    public class UserService
     {
-        _userRepository = userRepository;
-    }
+        private readonly UserRepository _userRepository;
 
-    public string Authenticate(string authHeader)
-    {
-
-        var (username, password) = BasicAuthHelper.DecodeBase64Credentials(authHeader);
-
-        var user = _userRepository.GetUserByUsername(username);
-        if (user == null) return null;
-
-        if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
+        public UserService(UserRepository userRepository)
         {
-            return null; 
+            _userRepository = userRepository;
         }
 
-        return user.ApiKey; 
-    }
-    public string Register(LoginModel loginModel)
-    {
-        var user = new User
+        public string Authenticate(string authHeader)
         {
-            Username = loginModel.Username,
-            Password = HashPassword(loginModel.Password),
-            ApiKey = Guid.NewGuid().ToString()
-        };
 
-        _userRepository.AddUser(user);
-        return user.ApiKey;
-    }
+            var (username, password) = BasicAuthHelper.DecodeBase64Credentials(authHeader);
 
-    private string HashPassword(string password)
-    {
-        return BCrypt.Net.BCrypt.HashPassword(password);
+            var user = _userRepository.GetUserByUsername(username);
+            if (user == null) return null;
+
+            if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
+            {
+                return null;
+            }
+
+            return user.ApiKey;
+        }
+
+        public string Register(LoginModel loginModel)
+        {
+            var user = new User
+            {
+                Username = loginModel.Username,
+                Password = HashPassword(loginModel.Password),
+                ApiKey = Guid.NewGuid().ToString()
+            };
+
+            _userRepository.AddUser(user);
+            return user.ApiKey;
+        }
+
+        private string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
     }
 }

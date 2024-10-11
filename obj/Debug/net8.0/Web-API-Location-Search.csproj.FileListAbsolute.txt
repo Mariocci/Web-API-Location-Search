@@ -1,0 +1,9 @@
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.csproj.AssemblyReference.cache
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.sourcelink.json
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.RazorAssemblyInfo.cache
+C:\Users\mario\OneDrive\Documents\GitHub\Web-API-Location-Search\obj\Debug\net8.0\Web-API-Location-Search.RazorAssemblyInfo.cs
