@@ -1,4 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using WebApiLocationSearch.Data;
+using WebApiLocationSearch.Repositories;
+using WebApiLocationSearch.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

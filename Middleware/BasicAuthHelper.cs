@@ -1,3 +1,6 @@
+using System;
+using System.Text;
+
 namespace WebApiLocationSearch.Middleware
 {
     public class BasicAuthHelper

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nOW8clDKxmw=",
+  "dgSpecHash": "sobkvzOQ7ZA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\Web-API-Location-Search.csproj",
+  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mario\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

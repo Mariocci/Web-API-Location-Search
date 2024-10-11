@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\Web-API-Location-Search.csproj": {}
+    "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\Web-API-Location-Search.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\Web-API-Location-Search.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj",
         "projectName": "Web-API-Location-Search",
-        "projectPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\Web-API-Location-Search.csproj",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\Web-API-Location-Search\\obj\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"

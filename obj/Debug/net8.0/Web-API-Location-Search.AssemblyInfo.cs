@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web-API-Location-Search")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a970d734496f4b2a8829726772a51761cde6293")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43efd18f3ebe6eb0ee443c96ecbb688da8375a60")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web-API-Location-Search")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web-API-Location-Search")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,7 @@
 
+using System.Linq;
+using WebApiLocationSearch.Data;
+using WebApiLocationSearch.Models;
 namespace WebApiLocationSearch.Repositories
 {
     public class UserRepository
@@ -10,18 +13,16 @@ namespace WebApiLocationSearch.Repositories
             _dbContext = dbContext;
         }
 
-        public User Authenticate(string username, string password)
-        {
-            var hashedPassword = HashPassword(password);
-            return _dbContext.Users.FirstOrDefault(user =>
-                user.Username == username && user.Password == hashedPassword);
-        }
-
-        public User Register(User user)
+        public void AddUser(User user)
         {
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
-            return user;
         }
+
+        public User GetUserByUsername(string username)
+        {
+            return _dbContext.Users.FirstOrDefault(user => user.Username == username);
+        }
+
     }
 }

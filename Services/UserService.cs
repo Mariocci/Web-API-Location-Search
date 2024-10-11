@@ -1,3 +1,9 @@
+using System;
+using WebApiLocationSearch.Middleware;
+using WebApiLocationSearch.Models;
+using WebApiLocationSearch.Repositories;
+using BCrypt.Net;
+
 namespace WebApiLocationSearch.Services
 {
     public class UserService
@@ -27,6 +33,12 @@ namespace WebApiLocationSearch.Services
 
         public string Register(LoginModel loginModel)
         {
+            var existingUser = _userRepository.GetUserByUsername(loginModel.Username);
+
+            if (existingUser != null)
+            {
+                return existingUser.ApiKey;
+            }
             var user = new User
             {
                 Username = loginModel.Username,

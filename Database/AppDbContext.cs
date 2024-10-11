@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApiLocationSearch.Models;
 
 namespace WebApiLocationSearch.Data
 {
