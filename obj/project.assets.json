@@ -9695,9 +9695,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj",
-      "projectName": "Web-API-Location-Search",
-      "projectPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\Web-API-Location-Search.csproj",
+      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\WebApiLocationSearch.csproj",
+      "projectName": "WebApiLocationSearch",
+      "projectPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\WebApiLocationSearch.csproj",
       "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mario\\OneDrive\\Documents\\GitHub\\WebApiLocationSearch\\obj\\",
       "projectStyle": "PackageReference",

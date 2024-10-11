@@ -23,6 +23,9 @@ namespace WebApiLocationSearch.Repositories
         {
             return _dbContext.Users.FirstOrDefault(user => user.Username == username);
         }
-
+        public User GetUserByApiKey(string apiKey)
+        {
+            return _dbContext.Users.FirstOrDefault(u => u.ApiKey == apiKey);
+        }
     }
 }

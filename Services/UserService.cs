@@ -1,8 +1,7 @@
 using System;
-using WebApiLocationSearch.Middleware;
 using WebApiLocationSearch.Models;
 using WebApiLocationSearch.Repositories;
-using BCrypt.Net;
+using WebApiLocationSearch.Helpers;
 
 namespace WebApiLocationSearch.Services
 {
@@ -54,5 +53,6 @@ namespace WebApiLocationSearch.Services
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
+        
     }
 }
