@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace WebApiLocationSearch.Models
@@ -8,5 +9,6 @@ namespace WebApiLocationSearch.Models
         public string Username { get; set; }
         [JsonIgnore] public string Password { get; set; }
         public string ApiKey { get; set; }
+        public ICollection<Log> Logs { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiLocationSearch.Data;
+using WebApiLocationSearch.Middleware;
 using WebApiLocationSearch.Repositories;
 using WebApiLocationSearch.Services;
 
@@ -14,8 +15,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<LoggingRepository>();
 
 var app = builder.Build();
+
+app.UseRouting();
+
+app.UseMiddleware<ApiKeyMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
 
 app.UseAuthorization();
 app.MapControllers();

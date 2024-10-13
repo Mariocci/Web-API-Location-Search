@@ -8,7 +8,7 @@ namespace WebApiLocationSearch.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
@@ -32,9 +32,9 @@ namespace WebApiLocationSearch.Controllers
 
         [AllowAnonymous]
         [HttpPost("register")]
-        public IActionResult Register([FromBody] LoginModel model)
+        public async Task<IActionResult> Register([FromBody] LoginModel model)
         {
-            var apiKey = _userService.Register(model);
+            var apiKey = await _userService.Register(model, HttpContext);
 
             if (apiKey == null)
                 return BadRequest(new { message = "Registration failed" });
