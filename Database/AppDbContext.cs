@@ -8,6 +8,7 @@ namespace WebApiLocationSearch.Data
         
         public DbSet<User> Users { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<FavoriteLocation> FavoriteLocations { get; set; }
         
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -20,6 +21,10 @@ namespace WebApiLocationSearch.Data
                 .WithMany(u => u.Logs)
                 .HasForeignKey(l => l.UserId);
             base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.Entity<FavoriteLocation>().HasOne(l => l.User)
+                .WithMany(u => u.FavoriteLocations)
+                .HasForeignKey(l => l.UserId);
         }
     }
 }

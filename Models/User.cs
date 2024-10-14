@@ -10,5 +10,6 @@ namespace WebApiLocationSearch.Models
         [JsonIgnore] public string Password { get; set; }
         public string ApiKey { get; set; }
         public ICollection<Log> Logs { get; set; }
+        public ICollection<FavoriteLocation> FavoriteLocations { get; set; }
     }
 }
