@@ -16,6 +16,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<LoggingRepository>();
+builder.Services.AddScoped<LocationService>();
+builder.Services.AddScoped<LocationRepository>();
+builder.Services.AddHttpClient();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 

@@ -20,6 +20,10 @@ namespace WebApiLocationSearch.Repositories
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
         }
+        public User GetUserById(int idUser)
+        {
+            return _dbContext.Users.FirstOrDefault(u => u.Id == idUser);
+        }
 
         public User GetUserByUsername(string username)
         {

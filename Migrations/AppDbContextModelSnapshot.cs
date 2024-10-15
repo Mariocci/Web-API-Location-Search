@@ -17,6 +17,37 @@ namespace WebAPILocationSearch.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
+            modelBuilder.Entity("WebApiLocationSearch.Models.FavoriteLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FavoriteLocations");
+                });
+
             modelBuilder.Entity("WebApiLocationSearch.Models.Log", b =>
                 {
                     b.Property<int>("LogId")
@@ -71,6 +102,17 @@ namespace WebAPILocationSearch.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("WebApiLocationSearch.Models.FavoriteLocation", b =>
+                {
+                    b.HasOne("WebApiLocationSearch.Models.User", "User")
+                        .WithMany("FavoriteLocations")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WebApiLocationSearch.Models.Log", b =>
                 {
                     b.HasOne("WebApiLocationSearch.Models.User", "User")
@@ -82,6 +124,8 @@ namespace WebAPILocationSearch.Migrations
 
             modelBuilder.Entity("WebApiLocationSearch.Models.User", b =>
                 {
+                    b.Navigation("FavoriteLocations");
+
                     b.Navigation("Logs");
                 });
 #pragma warning restore 612, 618

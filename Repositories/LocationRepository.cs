@@ -7,24 +7,24 @@ namespace WebApiLocationSearch.Repositories;
 
 public class LocationRepository
 {
-    private readonly AppDbContext _context;
+    private readonly AppDbContext _dbContext;
 
     public LocationRepository(AppDbContext context)
     {   
-        context = _context;
+        _dbContext = context;
     }
 
     public List<FavoriteLocation> GetFavorites(int userId, string category, string search)
     {
-        return _context.FavoriteLocations.Where(f => f.UserId == userId 
-                                                     && (category == null || f.Category == category)
-                                                     && (search == null || f.Name.Contains(search)))
+        return _dbContext.FavoriteLocations.Where(f => f.UserId == userId 
+                                                       && (category == null || f.Category == category)
+                                                       && (search == null || f.Name.Contains(search)))
                                                         .ToList();
     }
 
     public void SaveFavorite(FavoriteLocation location)
     {
-        _context.FavoriteLocations.Add(location);
-        _context.SaveChanges();
+        _dbContext.FavoriteLocations.Add(location);
+        _dbContext.SaveChanges();
     }
 }

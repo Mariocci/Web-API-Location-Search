@@ -5,9 +5,8 @@ using WebApiLocationSearch.Models;
 using WebApiLocationSearch.Services;
 
 namespace WebApiLocationSearch.Controllers;
-[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class LocationController : ControllerBase
 {
     private readonly LocationService _locationService;
