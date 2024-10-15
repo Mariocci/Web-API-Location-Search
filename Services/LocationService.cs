@@ -45,7 +45,7 @@ public class LocationService
 
     public async Task<List<LocationModel>> SearchNearbyLocations(LocationSearchModel locationSearchModel)
     {
-            var apiKey = "YOUR_GOOGLE_PLACES_API_KEY";
+            var apiKey = "todo";
             var url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={locationSearchModel.Latitude},{locationSearchModel.Longitude}&radius=1500&type={locationSearchModel.Radius}&key={apiKey}";
 
             var response = await _httpClient.GetAsync(url);
