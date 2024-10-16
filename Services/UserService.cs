@@ -35,13 +35,6 @@ namespace WebApiLocationSearch.Services
 
         public async Task<string> Register(LoginModel loginModel, HttpContext httpContext)
         {
-            var existingUser = await _userRepository.GetUserByUsernameAsync(loginModel.Username);
-
-            if (existingUser != null)
-            {
-                return existingUser.ApiKey;
-            }
-
             var newUser = new User
             {
                 Username = loginModel.Username,
@@ -56,6 +49,10 @@ namespace WebApiLocationSearch.Services
             return newUser.ApiKey;
         }
 
+        public bool IsUserRegistered(string username)
+        {   
+            return _userRepository.GetUserByUsername(username) != null;
+        }
 
         private string HashPassword(string password)
         {

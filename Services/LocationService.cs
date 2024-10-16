@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using WebApiLocationSearch.Models;
 using WebApiLocationSearch.Repositories;
 
@@ -14,12 +16,14 @@ public class LocationService
     private readonly LocationRepository _locationRepository;
     private readonly HttpClient _httpClient;
     private readonly UserRepository _userRepository;
+    private readonly IConfiguration _configuration;
 
-    public LocationService(LocationRepository locationRepository, HttpClient httpClient, UserRepository userRepository)
+    public LocationService(LocationRepository locationRepository, HttpClient httpClient, UserRepository userRepository, IConfiguration configuration)
     {
         _locationRepository = locationRepository;
         _httpClient = httpClient;
         _userRepository = userRepository;
+        _configuration = configuration;
     }
 
     public void SaveFavorite(FavoriteLocation location)
@@ -45,8 +49,8 @@ public class LocationService
 
     public async Task<List<LocationModel>> SearchNearbyLocations(LocationSearchModel locationSearchModel)
     {
-            var apiKey = "todo";
-            var url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={locationSearchModel.Latitude},{locationSearchModel.Longitude}&radius=1500&type={locationSearchModel.Radius}&key={apiKey}";
+            var apiKey = _configuration["GooglePlacesApi:ApiKey"];
+            var url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={locationSearchModel.Latitude},{locationSearchModel.Longitude}&radius={locationSearchModel.Radius}&type={locationSearchModel.Type}&key={apiKey}";
 
             var response = await _httpClient.GetAsync(url);
 
@@ -56,7 +60,7 @@ public class LocationService
             }
             
             var jsonString = await response.Content.ReadAsStringAsync();
-            var locationResponse = JsonSerializer.Deserialize<GooglePlacesResponse>(jsonString);
+            var locationResponse = JsonConvert.DeserializeObject<GooglePlacesResponse>(jsonString);
             
             var locations = locationResponse.Results.Select(result => new LocationModel
             {

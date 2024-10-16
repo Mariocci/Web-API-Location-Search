@@ -34,6 +34,19 @@ namespace WebApiLocationSearch.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] LoginModel model)
         {
+            if (model.Username == null || model.Password == null)
+            {
+                return BadRequest(new { message = "Username or password is missing." });
+            }
+            if (model.Username == model.Password)
+            {
+                return BadRequest(new { message = "Username can't be the same as password." });
+            }
+
+            if (_userService.IsUserRegistered(model.Username))
+            {
+                return BadRequest(new { message = "Username is already taken." });
+            }
             var apiKey = await _userService.Register(model, HttpContext);
 
             if (apiKey == null)

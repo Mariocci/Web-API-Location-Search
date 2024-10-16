@@ -135,3 +135,14 @@ C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\obj\Debug\net8.0\r
 C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\obj\Debug\net8.0\WebApiLocationSearch.pdb
 C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\obj\Debug\net8.0\WebApiLocationSearch.genruntimeconfig.cache
 C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\obj\Debug\net8.0\ref\WebApiLocationSearch.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\mario\OneDrive\Documents\GitHub\WebApiLocationSearch\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

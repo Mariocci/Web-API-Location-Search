@@ -69,6 +69,7 @@ namespace WebApiLocationSearch.Middleware
 
         private async Task LogRequestAndResponseAsync(HttpContext context, string requestBody, string responseBody)
         {
+            int? userId = context.Items["UserId"] as int?;
             var requestLogEntry = new Log
             {
                 Method = context.Request.Method,
@@ -76,7 +77,8 @@ namespace WebApiLocationSearch.Middleware
                 Body = requestBody,
                 Timestamp = DateTime.UtcNow,
                 LogType = "Request",
-                IpAddress = context.Connection.RemoteIpAddress?.ToString()
+                IpAddress = context.Connection.RemoteIpAddress?.ToString(),
+                UserId = userId
             };
 
             await _loggingRepository.SaveLogAsync(requestLogEntry);
@@ -88,7 +90,8 @@ namespace WebApiLocationSearch.Middleware
                 Body = responseBody,
                 Timestamp = DateTime.UtcNow,
                 LogType = "Response",
-                IpAddress = context.Connection.RemoteIpAddress?.ToString()
+                IpAddress = context.Connection.RemoteIpAddress?.ToString(),
+                UserId = userId
             };
 
             await _loggingRepository.SaveLogAsync(responseLogEntry);

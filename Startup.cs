@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiLocationSearch.Data;
+using WebApiLocationSearch.Hubs;
 using WebApiLocationSearch.Middleware;
 using WebApiLocationSearch.Repositories;
 using WebApiLocationSearch.Services;
@@ -29,5 +30,8 @@ app.UseMiddleware<ApiKeyMiddleware>();
 app.UseMiddleware<LoggingMiddleware>();
 
 app.UseAuthorization();
+
 app.MapControllers();
+app.MapHub<LocationHub>("/locationHub");
+
 app.Run();
